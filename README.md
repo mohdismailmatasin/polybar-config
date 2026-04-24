@@ -1,5 +1,7 @@
 # Polybar Configuration
 
+![Polybar Sample](polybar-image.png)
+
 My personal polybar configuration for Arch Linux/i3wm.
 
 ## Files
