@@ -17,7 +17,7 @@ My personal polybar configuration for Arch Linux/i3wm.
 
 - Polybar
 - i3wm (or compatible window manager)
-- NetworkManager
+- wifitui (WiFi manager for Connman)
 - Bluez (for Bluetooth)
 - Cava (optional, for audio visualization)
 - PulseAudio
