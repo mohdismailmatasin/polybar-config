@@ -20,6 +20,12 @@ My personal polybar configuration for Arch Linux/i3wm.
 - NetworkManager
 - Bluez (for Bluetooth)
 - Cava (optional, for audio visualization)
+- PulseAudio
+- pavucontrol (for volume settings)
+- tilix (terminal emulator)
+- wiremix (CLI audio mixer for Connman)
+- ttf-poppins-fonts (font)
+- ttf-nerd-fonts-symbols (font)
 
 ## Installation
 

@@ -1,0 +1,29 @@
+#!/bin/sh
+
+ICON=" "
+
+decode_hex_ssid() {
+  printf "%s" "$1" | sed 's/\(..\)/\\x\1/g' | xargs -0 echo -e 2>/dev/null
+}
+
+get_wifi_info() {
+  STATE=$(cat /sys/class/net/wlan0/operstate 2>/dev/null)
+  if [ "$STATE" = "up" ] || [ "$STATE" = "unknown" ]; then
+    RAW_SSID=$(gdbus call --system --dest net.connman.iwd --object-path /net/connman/iwd/0/4 --method org.freedesktop.DBus.Properties.Get "net.connman.iwd.Station" "ConnectedNetwork" 2>/dev/null | awk -F"'" '{print $2}' | awk -F"/" '{print $NF}' | sed 's/_psk//')
+    if [ -n "$RAW_SSID" ]; then
+      SSID=$(decode_hex_ssid "$RAW_SSID")
+      LINK=$(cat /proc/net/wireless 2>/dev/null | awk '/wlan0/ {gsub(/\./, "", $3); print $3}')
+      if [ -n "$LINK" ]; then
+        SIGNAL=$((LINK * 100 / 70))
+        [ "$SIGNAL" -gt 100 ] && SIGNAL=100
+        echo "%{F#61AFEF}$ICON%{F-}   %{F#ABB2BF}$SSID%{F-} %{F#61AFEF}${SIGNAL}%{F-}%"
+        return
+      fi
+    fi
+    echo "%{F#98C379}$ICON%{F-}"
+  else
+    echo "%{F#A6A0A0}$ICON%{F-}"
+  fi
+}
+
+get_wifi_info
