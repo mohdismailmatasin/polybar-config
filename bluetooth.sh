@@ -1,6 +1,6 @@
 #!/bin/sh
 
-ICON=""
+ICON=" "
 CONNECTED=""
 
 for addr in $(bluetoothctl devices | cut -d' ' -f2); do
