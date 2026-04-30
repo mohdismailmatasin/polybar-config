@@ -22,7 +22,7 @@ data_format = ascii
 ascii_max_range = 7
 " > $config_file
 
-COLOR="%{F#89b4fa}"
+COLOR="%{F#939db2}"
 RESET="%{F-}"
 
 cava -p $config_file | while read -r line; do

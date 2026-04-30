@@ -26,7 +26,7 @@ get_cpu() {
   fi
   
   echo "$TOTAL $IDLE" > /tmp/polybar_cpu_prev
-  printf "%%{F#89b4fa}  %s%%%%{F-}\n" "$USAGE"
+  printf "%%{F#a6e3a1}  %s%%%%{F-}\n" "$USAGE"
 }
 
 get_cpu

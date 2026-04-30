@@ -11,13 +11,10 @@ CHOICE=$(yad --undecorated \
 --list \
 --no-headers \
 --column="Action" \
-" Logout" \
-"⭘ Reboot" \
-"⏼ Power Off" \
+"Logout" \
+"Reboot" \
+"Power Off" \
 --separator="")
-
-# Strip icons safely
-CHOICE=$(echo "$CHOICE" | sed 's/ //; s/⭘ //; s/⏼ //')
 
 # =========================
 # ACTIONS

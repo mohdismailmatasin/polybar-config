@@ -11,7 +11,7 @@ STATUS=$(cat "$BAT_PATH/status" 2>/dev/null)
 [ -z "$STATUS" ] && STATUS="Unknown"
 
 # Colors
-COLOR="%{F#89b4fa}"   # primary
+COLOR="%{F#a6e3a1}"   # primary
 RESET="%{F-}"
 
 # Icons (discharging ramp)

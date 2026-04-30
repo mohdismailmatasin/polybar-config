@@ -1,7 +1,10 @@
 #!/bin/sh
 
-ICON=""
+ICON=""
 CONNECTED=""
+COLOR_CONNECTED="%{F#89b4fa}"
+COLOR_ON="%{F#707880}"
+COLOR_DISABLED="%{F#f38ba8}"
 
 for addr in $(bluetoothctl devices | cut -d' ' -f2); do
   if bluetoothctl info "$addr" 2>/dev/null | grep -q "Connected: yes"; then
@@ -12,10 +15,10 @@ done
 
 if bluetoothctl show | grep -q "Powered: yes"; then
   if [ -n "$CONNECTED" ]; then
-    echo "%{F#61AFEF}$ICON%{F-}   %{F#ABB2BF}$CONNECTED%{F-}"
+    echo "$COLOR_CONNECTED$ICON%{F-}   $COLOR_CONNECTED$CONNECTED%{F-}"
   else
-    echo "%{F#98C379}$ICON%{F-}"
+    echo "$COLOR_ON$ICON%{F-}"
   fi
 else
-  echo "%{F#A6A0A0}$ICON%{F-}"
+  echo "$COLOR_DISABLED$ICON%{F-}"
 fi

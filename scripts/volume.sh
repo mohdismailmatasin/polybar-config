@@ -8,7 +8,7 @@ MUTE=$(pamixer --get-mute 2>/dev/null)
 
 # Colors
 COLOR_MUTED="%{F#707880}"
-COLOR_ACTIVE="%{F#61AFEF}"
+COLOR_ACTIVE="%{F#a6e3a1}"
 COLOR_RESET="%{F-}"
 
 # Icons

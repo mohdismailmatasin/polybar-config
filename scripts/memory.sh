@@ -7,7 +7,7 @@ MEM=$(free | awk '/Mem:/ {printf "%.0f", $3/$2 * 100}')
 [ -z "$MEM" ] && MEM=0
 
 # Colors (match your theme)
-COLOR="%{F#89b4fa}"   # replace with your ${colors.primary}
+COLOR="%{F#a6e3a1}"   # replace with your ${colors.primary}
 RESET="%{F-}"
 
 # Icon

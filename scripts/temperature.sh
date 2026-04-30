@@ -16,7 +16,7 @@ RAW=$(get_temp)
 TEMP=$((RAW / 1000))
 
 # Colors (match your theme)
-COLOR_NORMAL="%{F#89b4fa}"  # primary
+COLOR_NORMAL="%{F#a6e3a1}"  # primary
 COLOR_WARN="%{F#f38ba8}"    # alert
 RESET="%{F-}"
 
