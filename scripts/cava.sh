@@ -22,6 +22,9 @@ data_format = ascii
 ascii_max_range = 7
 " > $config_file
 
+COLOR="%{F#89b4fa}"
+RESET="%{F-}"
+
 cava -p $config_file | while read -r line; do
-    echo $line | sed $dict
+    printf "%s%s%s\n" "$COLOR" "$(echo $line | sed $dict)" "$RESET"
 done
