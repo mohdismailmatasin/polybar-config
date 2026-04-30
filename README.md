@@ -32,6 +32,17 @@ My personal polybar configuration for Linux with i3wm.
 - tilix (terminal emulator)
 - JetBrains Mono Nerd Font
 
+## Dependencies (Arch Linux)
+
+```bash
+pacman -S polybar i3-wm pamixer bluez cava connman bluetui tilix ttf-jetbrains-mono nerd-fonts-jetbrains-mono
+```
+
+Optional:
+```bash
+pacman -S wiremix
+```
+
 ## Installation
 
 1. Copy the contents of this repository to `~/.config/polybar/`
